@@ -1,0 +1,12 @@
+/bin/
+/lib/
+/include/
+/local/
+/dist/
+/lib/
+/parts/
+/.installed.cfg
+*.pyc
+*.pyo
+/cc/legaleratta/checkouts/
+/cc.legaleratta.egg-info
