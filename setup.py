@@ -25,7 +25,14 @@ setup(
     # scripts and dependencies
     install_requires = [
         'PasteScript',
+        'WebOb',
         ],
+
+    entry_points = """\
+      [paste.app_factory]
+      licenses_legalserve = cc.legaleratta.serve_legalcode:licenses_app_factory
+      publicdomain_legalserve = cc.legaleratta.serve_legalcode:publicdomain_app_factory
+      """,
 
     # author metadata
     author = 'Jonathan Palecek',
