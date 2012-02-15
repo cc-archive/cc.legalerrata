@@ -1,4 +1,4 @@
-/* Creative Commons legal eratta annotation tool 
+/* Creative Commons legal errata annotation tool 
 
    Written in 2012 by Jonathan Palecek, Creative Commons
 

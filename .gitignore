@@ -8,5 +8,5 @@
 /.installed.cfg
 *.pyc
 *.pyo
-/cc/legaleratta/checkouts/
-/cc.legaleratta.egg-info
+/cc/legalerrata/checkouts/
+/cc.legalerrata.egg-info

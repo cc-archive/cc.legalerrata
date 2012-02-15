@@ -1,4 +1,4 @@
-# CC Legalcode Eratta Tool
+# CC Legalcode Errata Tool
 # 
 # Written in 2012 by Christopher Allan Webber, Jonathan Palecek,
 #   Creative Commons
@@ -15,7 +15,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="cc.legaleratta",
+    name="cc.legalerrata",
     version="0.1-dev",
     namespace_packages=['cc',],
     packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
@@ -30,8 +30,8 @@ setup(
 
     entry_points = """\
       [paste.app_factory]
-      licenses_legalserve = cc.legaleratta.serve_legalcode:licenses_app_factory
-      publicdomain_legalserve = cc.legaleratta.serve_legalcode:publicdomain_app_factory
+      licenses_legalserve = cc.legalerrata.serve_legalcode:licenses_app_factory
+      publicdomain_legalserve = cc.legalerrata.serve_legalcode:publicdomain_app_factory
       """,
 
     # author metadata

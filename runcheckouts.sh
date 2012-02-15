@@ -13,7 +13,7 @@
 # with this software. If not, see
 # <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-BASEDIR="cc/legaleratta/checkouts"
+BASEDIR="cc/legalerrata/checkouts"
 
 if [ ! -d $BASEDIR ]; then
     mkdir $BASEDIR -p

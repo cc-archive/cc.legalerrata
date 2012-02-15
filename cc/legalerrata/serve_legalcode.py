@@ -1,4 +1,4 @@
-# CC Legalcode Eratta Tool
+# CC Legalcode Errata Tool
 # 
 # Written in 2012 by Christopher Allan Webber, Jonathan Palecek,
 #   Creative Commons
@@ -50,7 +50,7 @@ def match_path_to_mapping(path, mapping):
 
 def legalcode_fullpath(path):
     return pkg_resources.resource_filename(
-        'cc.legaleratta', '/checkouts/legalcode/' + path.lstrip('/'))
+        'cc.legalerrata', '/checkouts/legalcode/' + path.lstrip('/'))
 
 
 NOT_FOUND_RESPONSE = HTTPNotFound("Couldn't find that license!")
