@@ -19,6 +19,8 @@ if [ ! -d $BASEDIR ]; then
     mkdir $BASEDIR -p
 fi
     
+cd $BASEDIR
+BASEDIR=`pwd`
 
 function make_or_update_checkout_git
 {
