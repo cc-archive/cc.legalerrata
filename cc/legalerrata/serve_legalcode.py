@@ -73,8 +73,13 @@ class LegalcodeServer(object):
         if not os.path.exists(legalcode_path):
             return NOT_FOUND_RESPONSE(environ, start_response)
             
-        return Response(file(legalcode_path, 'r').read())(
-            environ, start_response)
+        response = Response(
+            file(legalcode_path, 'r').read(),
+            charset='UTF-8')
+        if legalcode_path.endswith('.txt'):
+            response.content_type = "text/plain; charset=UTF-8"
+
+        return response(environ, start_response)
 
 
 def licenses_app_factory(config, **kw):
