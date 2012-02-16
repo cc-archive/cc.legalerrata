@@ -120,13 +120,23 @@ ANNO.init = (function () {
 	var rewrite = function (path, html, attrs) {
 	    var node = $(path)[0];
 	    if (!!node) {
-		if (!!attrs) {
-		    for (var i=0; i<attrs.length; i+=1) {
-			node.setAttribute(attrs[i][0], attrs[i][1]);
+		if (!!html && html.slice(0,14) === "（╯°□°）╯ ︵ ┻━┻ ") {
+		    /* denotes a custom behavior */
+		    var statement = html.slice(14);
+		    if (statement.slice(0, 7) === "PREPEND") {
+			// used in the errata for spain's 3.0 ports >_<
+			node.innerHTML = statement.slice(8) + node.innerHTML;
 		    }
 		}
-		if (!!html) {
-		    node.innerHTML = html;
+		else {
+		    if (!!attrs) {
+			for (var i=0; i<attrs.length; i+=1) {
+			    node.setAttribute(attrs[i][0], attrs[i][1]);
+			}
+		    }
+		    if (!!html) {
+			node.innerHTML = html;
+		    }
 		}
 	    }
 	    else {
