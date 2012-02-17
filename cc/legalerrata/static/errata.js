@@ -71,6 +71,8 @@ var ANNO = {};
 	}
     })();
 
-    load(load_path + "/errata/jquery.js");
-    load(load_path + "/errata/errata_engine.js");
+    if (ANNO.DEBUG) {
+	load(load_path + "/errata/jquery.js");
+	load(load_path + "/errata/errata_engine.js");
+    }
 })();
