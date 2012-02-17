@@ -42,15 +42,16 @@ var ANNO = {};
 	    }
 	}
 	var load_path = "";
-	if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) === -1) {
-	    load_path = "http://creativecommons.org";
+	if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) !== -1) {
+	    ANNO.DEBUG = true;
 	}
 	else if (window.location.hostname === "staging.creativecommons.org") {
 	    load_path = "http://staging.creativecommons.org";
 	    ANNO.DEBUG = true;
 	}
 	else {
-	    ANNO.DEBUG = true;
+	    load_path = "http://creativecommons.org";
+	    ANNO.DEBUG = false;
 	}
 	errata_path = load_path + "/errata/json/";
 	// FIXME: this is probably wrong:
