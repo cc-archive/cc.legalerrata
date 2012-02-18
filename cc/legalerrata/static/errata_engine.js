@@ -50,9 +50,9 @@ ANNO.init = (function () {
     };
     var extra = "";
     extra += "<style type='text/css'>\n";
-    extra += "body {\n";
-    extra +=      transition("margin 1s");
-    extra += "}\n";
+    //extra += "body {\n";
+    //extra +=      transition("margin 1s");
+    //extra += "}\n";
     extra += "body.errata_tool {\n";
     extra += "    margin-top: 30px;\n";
     extra += "    padding-top: 10px;\n";
@@ -90,16 +90,19 @@ ANNO.init = (function () {
     extra += "    height: 30px;\n";
     extra += "    background-color: #222;\n";
     extra += "    color: #ccc;\n";
+    extra += "    border-top: 1px solid #444;\n";
     extra += "    border-bottom: 1px solid #444;\n";
     extra += "    padding-left: 40px;\n";
     extra += "    padding-right: 40px;\n";
     extra += "    padding-top: 10px;\n";
     extra += "    padding-bottom: -10px;\n";
     extra += "    text-align: left;\n";
+    extra += "    opacity: .95;\n";
     extra += "}\n";
-    extra += keyframes("reveal", "top: -31px", "top: 0px");
+    //extra += keyframes("reveal", "top: -31px", "top: 0px");
+    extra += keyframes("reveal", "opacity: 0", "opacity: .95");
     extra += "#annotation_toolbar.reveal {\n";
-    extra +=      animation("reveal 1s");
+    extra +=      animation("reveal 3s");
     extra += "}\n";
     extra += "</style>\n";
     extra += "<div id='annotation_toolbar'>Please wait...</div>\n";
@@ -156,22 +159,22 @@ ANNO.init = (function () {
 	    "applied_errata" : {
 		"name" : "Apply Errata",
 		"cache" : cache.errata_applied,
-		"caption" : "Errata has been applied to the text below.",
+		"caption" : "[<i>Errata Tool Beta Test Thingy</i>] :: Errata has been applied to the text below.",
 		"actions" : ["annotated_errata", "original_page"],
 		"extra" : function () {
 		    $("del, ins").addClass("clean");
 		},
 	    },
 	    "annotated_errata" : {
-		"name" : "Highlight Errata",
+		"name" : "Highlight Changes",
 		"cache" : cache.errata_applied,
-		"caption" : "Errata has been applied to the text below.",
+		"caption" : "[<i>Errata Tool Beta Test Thingy</i>] :: Errata has been applied to the text below.",
 		"actions" : ["applied_errata", "original_page"],
 	    },
 	    "original_page" : {
 		"name" : "Remove Errata",
 		"cache" : cache.errata_free,
-		"caption" : "Below is the original license.",
+		"caption" : "[<i>Errata Tool Beta Test Thingy</i>] :: Below is the original license.",
 		"actions" : ["applied_errata"],
 	    }
 	};
@@ -193,7 +196,7 @@ ANNO.init = (function () {
 	    for (var a=0; a<select.actions.length; a+=1) {
 		var action = select.actions[a];
 		if (a !== 0) {
-		    scratch += " - ";
+		    scratch += " + ";
 		}
 		scratch += "<a href=\"javascript:ANNO.apply_view('";
 		scratch += action + "');\">";
@@ -204,7 +207,8 @@ ANNO.init = (function () {
 	};
 	
 	// Activate the default view:
-	ANNO.apply_view("applied_errata");
+	ANNO.apply_view("original_page");
+	//ANNO.apply_view("applied_errata");
 	$('body').addClass("errata_tool");
 	$("#annotation_toolbar").addClass("reveal");
     });
